@@ -74,23 +74,19 @@ public class Main {
                 //Alterar
                 case "4":
                     while (querContinuar) {
-                        String itemAnterior;
-                        System.out.println("Informe o item da lista que deseja alterar:");
+                        System.out.println("Informe a posição da lista do item que deseja alterar:");
                         entrada = s.nextLine();
+                        int pos = Integer.parseInt(entrada);
+                        listaProdutos.get(pos);
 
-                        if (listaProdutos.contains(entrada)) {
-                            itemAnterior = entrada;
-                            listaProdutos.remove(entrada);
-
-                            System.out.println("Você deseja alterá-lo para qual item?");
+                            System.out.println("Qual seria o nome do novo item?");
                             entrada = s.nextLine();
+                            listaProdutos.set(pos, entrada);
 
-                            listaProdutos.add(entrada);
-                            System.out.println(itemAnterior + " foi alterado para " + entrada + " com sucesso!");
+                        System.out.println("Alterado o item da posição " + pos + " para " + entrada + " com sucesso!");
 
-                        } else {
-                            System.out.println("<ERRO> ESSE ITEM NÃO CONSTA NA SUA LISTA...");
-                        }
+                        System.out.println();
+
                         System.out.println("Deseja alterar outro item? s/n");
                         entrada = s.nextLine();
 
